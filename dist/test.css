@@ -1,7 +1,27 @@
-.test-cdn {
-  background: black;
-  padding: 12px;
-}
-.text-dynamic {
+.color-text {
   color: var(--text-color, black);
+}
+
+.color-bg {
+  background-color: var(--bg-color, white);
+}
+
+.font-size {
+  font-size: var(--font-size, 16px);
+}
+
+.margin {
+  margin: var(--margin, 10px);
+}
+
+.padding {
+  padding: var(--padding, 10px);
+}
+
+.border {
+  border: var(--border, 1px solid black);
+}
+
+.width {
+  width: var(--width, 100%);
 }
