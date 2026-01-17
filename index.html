@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Dharm Utility CSS – Docs</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.4/dist/test.css"
+  />
+</head>
+
+<body class="flexbox">
+
+<!-- SIDEBAR -->
+<aside
+  class="bg text h w pos p flexbox flex-dir gap"
+  style="
+    --bg:#020617;
+    --text:#e5e7eb;
+    --w:260px;
+    --h:100vh;
+    --pos:fixed;
+    --p:28px;
+    --gap:20px;
+    --flex-dir:column;
+    box-shadow:6px 0 24px rgba(0,0,0,0.25);
+  "
+>
+  <h2 class="fs" style="--fs:22px;">Dharm Utility CSS</h2>
+
+  <nav class="flexbox flex-dir gap" style="--flex-dir:column; --gap:6px;">
+    <a class="text cursor p" style="--p:10px; border-radius:10px;" data-section="home">Home</a>
+    <a class="text cursor p" style="--p:10px; border-radius:10px;" data-section="colors">Colors</a>
+    <a class="text cursor p" style="--p:10px; border-radius:10px;" data-section="margin">Margin</a>
+    <a class="text cursor p" style="--p:10px; border-radius:10px;" data-section="padding">Padding</a>
+    <a class="text cursor p" style="--p:10px; border-radius:10px;" data-section="font">Font</a>
+    <a class="text cursor p" style="--p:10px; border-radius:10px;" data-section="layout">Layout</a>
+  </nav>
+</aside>
+
+<!-- MAIN -->
+<main
+  class="bg text ml p w"
+  style="
+    --bg:#f8fafc;
+    --text:#020617;
+    --ml:260px;
+    --p:64px;
+    --w:calc(100% - 260px);
+  "
+>
+
+<!-- HOME -->
+<section data-content="home">
+  <h1 class="fs" style="--fs:36px;">Welcome</h1>
+  <p class="fs mt" style="--fs:18px; --mt:16px;">
+    Runtime utility CSS using real CSS variables.
+  </p>
+</section>
+
+<!-- COLORS -->
+<section data-content="colors" hidden>
+  <h1 class="fs" style="--fs:28px;">Colors</h1>
+
+  <div class="bg text p mt" style="--bg:#e5e7eb; --p:20px; --mt:24px; border-radius:14px;">
+    <b>Helper</b><br>
+    Class: <code>text</code><br>
+    Variable: <code>--text</code>
+  </div>
+
+  <pre class="bg text p mt"
+    style="--bg:#020617; --text:#38bdf8; --p:20px; --mt:24px; border-radius:14px;">
+&lt;div class="text" style="--text:red;"&gt;Red text&lt;/div&gt;
+  </pre>
+
+  <p class="fs mt" style="--fs:16px; --mt:24px;">--text: red</p>
+  <div class="text fs" style="--text:red; --fs:18px;">Red text</div>
+
+  <p class="fs mt" style="--fs:16px; --mt:24px;">--text: black</p>
+  <div class="text fs" style="--text:black; --fs:18px;">Black text</div>
+
+  <p class="fs mt" style="--fs:16px; --mt:24px;">--text: white</p>
+  <div class="bg text fs p" style="--bg:black; --text:white; --p:10px; --fs:18px; border-radius:10px;">
+    White on black
+  </div>
+
+  <p class="fs mt" style="--fs:16px; --mt:24px;">--text: #ff0000</p>
+  <div class="text fs" style="--text:#ff0000; --fs:18px;">Hex red</div>
+</section>
+
+
+<!-- MARGIN (WITH EXTRA EXAMPLES) -->
+<section data-content="margin" hidden>
+  <h1 class="fs" style="--fs:28px;">Margin</h1>
+
+  <div class="bg text p mt" style="--bg:#e5e7eb; --p:16px; --mt:24px; border-radius:12px;">
+    <b>Helper</b><br>
+    Class: <code>m</code>, <code>mt</code>, <code>ml</code><br>
+    Variable: <code>--m</code>, <code>--mt</code>, <code>--ml</code>
+  </div>
+
+  <pre class="bg text p mt"
+    style="--bg:#020617; --text:#38bdf8; --p:16px; --mt:24px; border-radius:12px;">
+&lt;div class="m mt ml"
+     style="--m:20px; --mt:40px; --ml:60px;"&gt;
+  Box
+&lt;/div&gt;
+  </pre>
+
+  <!-- NEW VISUAL BLOCK -->
+  <div class="bg p mt" style="--bg:#020617; --p:24px; --mt:24px; border-radius:16px;">
+    <div class="bg text p m" style="--bg:#2563eb; --p:12px; --m:12px;">--m:12px</div>
+    <div class="bg text p m mt" style="--bg:#16a34a; --p:12px; --m:12px; --mt:32px;">--mt:32px</div>
+    <div class="bg text p m ml" style="--bg:#dc2626; --p:12px; --m:12px; --ml:40px;">--ml:40px</div>
+  </div>
+</section>
+
+<!-- PADDING (WITH EXTRA EXAMPLES) -->
+<section data-content="padding" hidden>
+  <h1 class="fs" style="--fs:28px;">Padding</h1>
+
+  <div class="bg text p mt" style="--bg:#e5e7eb; --p:16px; --mt:24px; border-radius:12px;">
+    <b>Helper</b><br>
+    Class: <code>p</code>, <code>pl</code>, <code>pt</code><br>
+    Variable: <code>--p</code>, <code>--pl</code>, <code>--pt</code>
+  </div>
+
+  <pre class="bg text p mt"
+    style="--bg:#020617; --text:#38bdf8; --p:16px; --mt:24px; border-radius:12px;">
+&lt;div class="p pl pt"
+     style="--p:20px; --pl:40px; --pt:10px;"&gt;
+  Box
+&lt;/div&gt;
+  </pre>
+
+  <!-- NEW VISUAL BLOCK -->
+  <div class="bg p mt" style="--bg:#020617; --p:24px; --mt:24px; border-radius:16px;">
+    <div class="bg text p mt" style="--bg:#2563eb; --p:8px;">--p:8px</div>
+    <div class="bg text p mt" style="--bg:#16a34a; --p:24px;">--p:24px</div>
+    <div class="bg text p mt" style="--bg:#dc2626; --p:40px;">--p:40px</div>
+  </div>
+</section>
+<!-- FONT -->
+<section data-content="font" hidden>
+  <h1 class="fs" style="--fs:28px;">Font Size</h1>
+
+  <div class="bg text p mt" style="--bg:#e5e7eb; --p:20px; --mt:24px; border-radius:14px;">
+    <b>Helper</b><br>
+    Class: <code>fs</code><br>
+    Variable: <code>--fs</code>
+  </div>
+
+  <pre class="bg text p mt"
+    style="--bg:#020617; --text:#38bdf8; --p:20px; --mt:24px; border-radius:14px;">
+&lt;p class="fs" style="--fs:32px;"&gt;
+  Text
+&lt;/p&gt;
+  </pre>
+
+  <p class="fs mt" style="--fs:15px; --mt:16px;">--fs: 15px</p>
+  <p class="fs mt" style="--fs:32px; --mt:24px;">--fs: 32px</p>
+  <p class="fs mt" style="--fs:50px; --mt:24px;">--fs: 50px</p>
+</section>
+
+<!-- LAYOUT -->
+<section data-content="layout" hidden>
+  <h1 class="fs" style="--fs:28px;">Layout (Flex)</h1>
+
+  <div class="bg text p mb" style="--bg:#e5e7eb; --p:16px;">
+    <b>Helper</b><br>
+    Classes:
+    <code>flexbox</code>,
+    <code>justify</code>,
+    <code>items</code>,
+    <code>gap</code><br>
+    Variables:
+    <code>--justify</code>,
+    <code>--items</code>,
+    <code>--gap</code>
+  </div>
+
+  <pre class="bg text p"
+    style="--bg:#020617; --text:#38bdf8; --p:16px;">
+&lt;div class="flexbox justify items gap"
+     style="--justify: center; --items: center; --gap: 20px;"&gt;
+  ...
+&lt;/div&gt;
+  </pre>
+
+  <p class="fs mt" style="--fs:16px; --mt:16px;">
+    --justify: center; --items: center;
+  </p>
+
+  <div class="flexbox justify items gap bg text p"
+    style="
+      --justify: center;
+      --items: center;
+      --gap: 20px;
+      --bg: #020617;
+      --text: white;
+      --p: 16px;
+    ">
+    <div class="bg p" style="--bg:#2563eb; --p:10px;">Item 1</div>
+    <div class="bg p" style="--bg:#16a34a; --p:10px;">Item 2</div>
+    <div class="bg p" style="--bg:#dc2626; --p:10px;">Item 3</div>
+  </div>
+
+  <p class="fs mt" style="--fs:16px; --mt:32px;">
+    --justify: space-between; --gap: 10px;
+  </p>
+
+  <div class="flexbox justify items gap bg text p"
+    style="
+      --justify: space-between;
+      --items: center;
+      --gap: 10px;
+      --bg: #020617;
+      --text: white;
+      --p: 16px;
+    ">
+    <div class="bg p" style="--bg:#7c3aed; --p:10px;">Left</div>
+    <div class="bg p" style="--bg:#0d9488; --p:10px;">Center</div>
+    <div class="bg p" style="--bg:#f97316; --p:10px;">Right</div>
+  </div>
+
+  <p class="fs mt" style="--fs:16px; --mt:32px;">
+    --gap: 40px;
+  </p>
+
+  <div class="flexbox justify items gap bg text p"
+    style="
+      --justify: flex-start;
+      --items: center;
+      --gap: 40px;
+      --bg: #020617;
+      --text: white;
+      --p: 16px;
+    ">
+    <div class="bg p" style="--bg:#22c55e; --p:10px;">A</div>
+    <div class="bg p" style="--bg:#eab308; --p:10px;">B</div>
+    <div class="bg p" style="--bg:#ef4444; --p:10px;">C</div>
+  </div>
+</section>
+
+</main>
+
+<!-- FIXED SCRIPT -->
+<script>
+  const links = document.querySelectorAll('[data-section]');
+  const sections = document.querySelectorAll('[data-content]');
+
+  function showSection(name) {
+    sections.forEach(sec => {
+      sec.hidden = sec.dataset.content !== name;
+    });
+
+    links.forEach(link => {
+      link.style.background = 'none';
+      if (link.dataset.section === name) {
+        link.style.background = '#2563eb';
+      }
+    });
+  }
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      showSection(link.dataset.section);
+    });
+  });
+
+  // Default section
+  showSection('home');
+</script>
+
+<script
+  src="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.4/dist/engine.js"
+  defer
+></script>
+
+</body>
+</html>

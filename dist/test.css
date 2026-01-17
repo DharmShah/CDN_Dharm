@@ -23,8 +23,6 @@
 
 .gap { gap: var(--gap, 0); }
 
-.gap { gap: var(--gap, 0); }
-
 /* typography */
 .fs { font-size: var(--fs, inherit); }
 .lh { line-height: var(--lh, normal); }

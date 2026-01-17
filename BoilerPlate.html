@@ -6,26 +6,30 @@
 
   <link
     rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.3/dist/test.css"
+    href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.4/dist/test.css"
   />
 </head>
-
-<body>
+  
+<body class="bg" style="--bg: #ffffff;">
 
   <!-- NAVBAR -->
-  <nav
-  class="bg text flexbox justify items radius shadow w p pl pr ml mr"
+ <nav
+  class="bg text mt p flexbox justify items radius shadow w pl pr ml mr gap fs"
   style="
-    --bg: white;
-    --text: #020617;
+    --bg: black;
+    --text: white;
 
-    --w: calc(100% - 30px);
+    --w: calc(60%);
 
-    --ml: 15px;
+    --p: 20px;
+    --ml: 20%;
     --mr: 15px;
+    --mt: 50px;
+    --gap:8px;
+    --fs:100px;
 
-    --pl: 20px;
-    --pr: 20px;
+    --pl: 40px;
+    --pr: 40px;
 
     --radius: 14px;
     --shadow: 0 10px 30px rgba(0,0,0,0.25);
@@ -34,24 +38,24 @@
   "
 >
 
-
     <!-- Brand -->
-    <div class="fs fw" style="--fs: 18px; --fw: 600;">
+    <div class="fs cursor" style="--fs: 30px; --cursor: pointer;">
       DharmUI
     </div>
 
     <!-- Right-side Links -->
     <div class="flexbox items gap">
-      <a class="text fs cursor" style="--fs: 15px; --cursor: pointer;">Home</a>
-      <a class="text fs cursor" style="--fs: 15px; --cursor: pointer;">About</a>
-      <a class="text fs cursor" style="--fs: 15px; --cursor: pointer;">Contact</a>
+      <a class="text fs cursor" style="--fs: 20px; --cursor: pointer;">Home</a>
+      <a class="text fs cursor" style="--fs: 20px; --cursor: pointer;">About</a>
+      <a class="text fs cursor" style="--fs: 20px; --cursor: pointer;">Contact</a>
     </div>
 
   </nav>
 
+
   <!-- Runtime Engine -->
   <script
-    src="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.3/dist/engine.js"
+    src="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.4/dist/engine.js"
     defer
   ></script>
 
