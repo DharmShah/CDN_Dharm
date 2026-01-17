@@ -1,3 +1,18 @@
+/* =========================================================
+   GLOBAL FIXES (IMPORTANT)
+   ========================================================= */
+
+/* predictable sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   COLOR
+   ========================================================= */
+
 .color-text {
   color: var(--text-color, black);
 }
@@ -5,9 +20,15 @@
 .color-bg {
   background-color: var(--bg-color, white);
 }
+
+/* =========================================================
+   FONT SIZE
+   ========================================================= */
+
 .fs {
   font-size: var(--fs, 16px);
 }
+
 .fs-min {
   font-size: min(var(--fs-min), var(--fs, 16px));
 }
@@ -16,8 +37,13 @@
   font-size: max(var(--fs-max), var(--fs, 16px));
 }
 
+/* =========================================================
+   MARGIN (FIXED – NO COLLAPSING)
+   ========================================================= */
+
 .m {
   margin: var(--m, 10px);
+  display: inline-block;   /* 🔑 prevents margin collapsing */
 }
 
 .mt { margin-top: var(--mt); }
@@ -25,18 +51,76 @@
 .mb { margin-bottom: var(--mb); }
 .ml { margin-left: var(--ml); }
 
+/* =========================================================
+   PADDING
+   ========================================================= */
+
 .p {
   padding: var(--p, 10px);
 }
+
 .pt { padding-top: var(--pt); }
 .pr { padding-right: var(--pr); }
 .pb { padding-bottom: var(--pb); }
 .pl { padding-left: var(--pl); }
 
+/* =========================================================
+   BORDER
+   ========================================================= */
+
 .border {
   border: var(--border, 1px solid black);
 }
 
+/* =========================================================
+   SIZE
+   ========================================================= */
+
 .width {
   width: var(--width, 100%);
+}
+
+/* =========================================================
+   MODERN UI UTILITIES
+   ========================================================= */
+
+/* layout */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* card */
+.card {
+  border-radius: var(--radius, 16px);
+  background: var(--card-bg, rgba(255,255,255,0.15));
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow, 0 20px 40px rgba(0,0,0,0.25));
+}
+
+/* text */
+.title {
+  font-weight: 600;
+}
+
+.subtitle {
+  opacity: 0.8;
+}
+
+/* button */
+.btn {
+  padding: 12px 20px;
+  border-radius: 12px;
+  background: var(--btn-bg, linear-gradient(135deg,#6366f1,#22d3ee));
+  color: white;
+  border: none;
+  cursor: pointer;
 }

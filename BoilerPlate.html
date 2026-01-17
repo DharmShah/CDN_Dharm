@@ -2,53 +2,43 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>Utility CSS Test</title>
+  <title>Modern UI Demo</title>
 
   <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.2/dist/test.css?cache=1"
-/>
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.2/dist/test.css?cache=2"
+  />
 
+  <style>
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg,#0f172a,#020617);
+    }
+  </style>
 </head>
-<body>
+<body class="flex center">
 
-  <!-- SIMPLE USAGE (defaults only) -->
-  <div class="m p fs color-bg color-text border">
-    Simple defaults (margin, padding, font-size)
-  </div>
-
-  <br />
-
-  <!-- ADVANCED USAGE (all utilities together) -->
   <div
-    class="
-      m mt ml
-      p pt pl
-      fs
-      color-bg
-      color-text
-      border
-      width
-    "
+    class="card flex flex-col m p fs color-text width"
     style="
-      --m: 12px;
-      --mt: 300px;
-      --ml: 600px;
-
-      --p: 14px;
-      --pt: 25px;
-      --pl: 40px;
-
-      --fs: 18px;
-
-      --bg-color: black;
+      --width: 360px;
+      --p: 24px;
+      --fs: 16px;
+      --radius: 18px;
       --text-color: white;
-
-      --border: 2px solid cyan;
-      --width: 320px;
     "
   >
-    All utilities working together 🚀
+    <h2 class="title fs" style="--fs: 22px;">
+      AI Dashboard
+    </h2>
+
+    <p class="subtitle m mt" style="--mt: 10px;">
+      Clean utility-first design system
+    </p>
+
+    <button class="btn m mt" style="--mt: 24px;">
+      Get Started
+    </button>
   </div>
 
 </body>
