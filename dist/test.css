@@ -1,126 +1,58 @@
-/* =========================================================
-   GLOBAL FIXES (IMPORTANT)
-   ========================================================= */
-
-/* predictable sizing */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* =========================================================
-   COLOR
-   ========================================================= */
+/* color */
+.bg { background-color: var(--bg, transparent); }
+.text { color: var(--text, inherit); }
 
-.color-text {
-  color: var(--text-color, black);
-}
+/* spacing */
+.m { margin: var(--m, 0); }
+.p { padding: var(--p, 0); }
+.gap { gap: var(--gap, 0); }
 
-.color-bg {
-  background-color: var(--bg-color, white);
-}
+/* typography */
+.fs { font-size: var(--fs, inherit); }
+.lh { line-height: var(--lh, normal); }
+.fw { font-weight: var(--fw, normal); }
+.ta { text-align: var(--ta, left); }
 
-/* =========================================================
-   FONT SIZE
-   ========================================================= */
-
-.fs {
-  font-size: var(--fs, 16px);
-}
-
-.fs-min {
-  font-size: min(var(--fs-min), var(--fs, 16px));
-}
-
-.fs-max {
-  font-size: max(var(--fs-max), var(--fs, 16px));
-}
-
-/* =========================================================
-   MARGIN (FIXED – NO COLLAPSING)
-   ========================================================= */
-
-.m {
-  margin: var(--m, 10px);
-  display: inline-block;   /* 🔑 prevents margin collapsing */
-}
-
-.mt { margin-top: var(--mt); }
-.mr { margin-right: var(--mr); }
-.mb { margin-bottom: var(--mb); }
-.ml { margin-left: var(--ml); }
-
-/* =========================================================
-   PADDING
-   ========================================================= */
-
-.p {
-  padding: var(--p, 10px);
-}
-
-.pt { padding-top: var(--pt); }
-.pr { padding-right: var(--pr); }
-.pb { padding-bottom: var(--pb); }
-.pl { padding-left: var(--pl); }
-
-/* =========================================================
-   BORDER
-   ========================================================= */
-
-.border {
-  border: var(--border, 1px solid black);
-}
-
-/* =========================================================
-   SIZE
-   ========================================================= */
-
-.width {
-  width: var(--width, 100%);
-}
-
-/* =========================================================
-   MODERN UI UTILITIES
-   ========================================================= */
+/* sizing */
+.w { width: var(--w, auto); }
+.h { height: var(--h, auto); }
+.max-w { max-width: var(--max-w, none); }
+.min-w { min-width: var(--min-w, auto); }
 
 /* layout */
-.flex {
-  display: flex;
-}
+.d { display: var(--d, block); }
+.pos { position: var(--pos, static); }
+.top { top: var(--top, auto); }
+.right { right: var(--right, auto); }
+.bottom { bottom: var(--bottom, auto); }
+.left { left: var(--left, auto); }
+.z { z-index: var(--z, auto); }
 
-.flex-col {
-  flex-direction: column;
-}
+/* flex helpers */
+.flexbox { display: flex; }
+.flex-dir { flex-direction: var(--flex-dir, row); }
+.justify { justify-content: var(--justify, flex-start); }
+.items { align-items: var(--items, stretch); }
+.wrap { flex-wrap: var(--wrap, nowrap); }
 
-.center {
-  justify-content: center;
-  align-items: center;
-}
+/* grid helpers */
+.gridbox { display: grid; }
+.grid-cols { grid-template-columns: var(--cols); }
+.grid-rows { grid-template-rows: var(--rows); }
 
-/* card */
-.card {
-  border-radius: var(--radius, 16px);
-  background: var(--card-bg, rgba(255,255,255,0.15));
-  backdrop-filter: blur(12px);
-  box-shadow: var(--shadow, 0 20px 40px rgba(0,0,0,0.25));
-}
+/* visuals */
+.radius { border-radius: var(--radius, 0); }
+.border { border: var(--border, none); }
+.shadow { box-shadow: var(--shadow, none); }
+.transition { transition: var(--transition, none); }
+.transform { transform: var(--transform, none); }
 
-/* text */
-.title {
-  font-weight: 600;
-}
-
-.subtitle {
-  opacity: 0.8;
-}
-
-/* button */
-.btn {
-  padding: 12px 20px;
-  border-radius: 12px;
-  background: var(--btn-bg, linear-gradient(135deg,#6366f1,#22d3ee));
-  color: white;
-  border: none;
-  cursor: pointer;
-}
+/* misc */
+.cursor { cursor: var(--cursor, auto); }
+.overflow { overflow: var(--overflow, visible); }

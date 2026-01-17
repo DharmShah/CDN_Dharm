@@ -2,44 +2,66 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>Modern UI Demo</title>
+  <title>Utility Navbar</title>
 
+  <!-- Utility CSS -->
   <link
     rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.2/dist/test.css?cache=2"
+    href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.2/dist/test.css"
   />
 
   <style>
     body {
       min-height: 100vh;
-      background: linear-gradient(135deg,#0f172a,#020617);
+      margin: 0;
+      background: linear-gradient(135deg, #0f172a, #020617);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 40px;
     }
   </style>
 </head>
-<body class="flex center">
 
-  <div
-    class="card flex flex-col m p fs color-text width"
+<body>
+
+  <!-- NAVBAR -->
+  <nav
+    class="bg text flexbox justify items radius shadow w"
     style="
-      --width: 360px;
-      --p: 24px;
-      --fs: 16px;
-      --radius: 18px;
-      --text-color: white;
+      --bg: white ;
+      --text: white;
+      --w: calc(100% - 50px);   /* 25px left + 25px right */
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(0,0,0,0.35);
+      --justify: space-between;
+      --items: center;
+      --p: 16px;
     "
   >
-    <h2 class="title fs" style="--fs: 22px;">
-      AI Dashboard
-    </h2>
 
-    <p class="subtitle m mt" style="--mt: 10px;">
-      Clean utility-first design system
-    </p>
+    <!-- Brand / Logo -->
+    <div class="fs fw" style="--fs: 18px; --fw: 600;">
+      DharmUI
+    </div>
 
-    <button class="btn m mt" style="--mt: 24px;">
-      Get Started
-    </button>
-  </div>
+    <!-- Right-side Links -->
+    <div
+      class="flexbox gap"
+      style="--gap: 24px;"
+    >
+      <a class="text fs cursor" style="--fs: 15px; --cursor: pointer;">Home</a>
+      <a class="text fs cursor" style="--fs: 15px; --cursor: pointer;">About</a>
+      <a class="text fs cursor" style="--fs: 15px; --cursor: pointer;">Contact</a>
+    </div>
+
+  </nav>
+
+  <!-- Runtime Engine -->
+  <script
+    src="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.2/dist/engine.js"
+    defer
+  ></script>
 
 </body>
 </html>
