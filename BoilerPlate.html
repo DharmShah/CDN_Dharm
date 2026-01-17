@@ -1,24 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.1/dist/test.css"
-    />
-  </head>
-  <body>
-    <div
-      class="color-text color-bg font-size padding border width"
-      style="
-        --text-color: white;
-        --bg-color: black;
-        --font-size: 18px;
-        --padding: 20px;
-        --border: 2px solid cyan;
-        --width: 300px;
-      "
-    >
-      Clean, dynamic & working 🚀
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <title>Utility CSS Test</title>
+
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.2/dist/test.css?cache=1"
+/>
+
+</head>
+<body>
+
+  <!-- SIMPLE USAGE (defaults only) -->
+  <div class="m p fs color-bg color-text border">
+    Simple defaults (margin, padding, font-size)
+  </div>
+
+  <br />
+
+  <!-- ADVANCED USAGE (all utilities together) -->
+  <div
+    class="
+      m mt ml
+      p pt pl
+      fs
+      color-bg
+      color-text
+      border
+      width
+    "
+    style="
+      --m: 12px;
+      --mt: 300px;
+      --ml: 600px;
+
+      --p: 14px;
+      --pt: 25px;
+      --pl: 40px;
+
+      --fs: 18px;
+
+      --bg-color: black;
+      --text-color: white;
+
+      --border: 2px solid cyan;
+      --width: 320px;
+    "
+  >
+    All utilities working together 🚀
+  </div>
+
+</body>
 </html>

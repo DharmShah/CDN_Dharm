@@ -5,18 +5,33 @@
 .color-bg {
   background-color: var(--bg-color, white);
 }
-
-.font-size {
-  font-size: var(--font-size, 16px);
+.fs {
+  font-size: var(--fs, 16px);
+}
+.fs-min {
+  font-size: min(var(--fs-min), var(--fs, 16px));
 }
 
-.margin {
-  margin: var(--margin, 10px);
+.fs-max {
+  font-size: max(var(--fs-max), var(--fs, 16px));
 }
 
-.padding {
-  padding: var(--padding, 10px);
+.m {
+  margin: var(--m, 10px);
 }
+
+.mt { margin-top: var(--mt); }
+.mr { margin-right: var(--mr); }
+.mb { margin-bottom: var(--mb); }
+.ml { margin-left: var(--ml); }
+
+.p {
+  padding: var(--p, 10px);
+}
+.pt { padding-top: var(--pt); }
+.pr { padding-right: var(--pr); }
+.pb { padding-bottom: var(--pb); }
+.pl { padding-left: var(--pl); }
 
 .border {
   border: var(--border, 1px solid black);
