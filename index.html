@@ -1,282 +1,215 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Dharm Utility CSS – Docs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dharm Utility CSS | Pro Interactive Docs</title>
 
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.4/dist/test.css"
-  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.4/dist/test.css" />
+
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --sidebar-bg: #020617;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { transition: var(--transition); scroll-behavior: smooth; box-sizing: border-box; }
+    body { background-color: #f1f5f9; overflow-x: hidden; font-family: 'Inter', sans-serif; margin: 0; }
+
+    /* CODE LENS TOOLTIP: Fixed for maximum visibility */
+    .showcase-item { position: relative; cursor: help; z-index: 10; }
+    .showcase-item::after {
+      content: attr(data-code);
+      position: absolute; bottom: 105%; left: 50%; transform: translate(-50%, -10px);
+      background: #0f172a; color: #38bdf8; padding: 10px 14px; border-radius: 8px;
+      font-family: monospace; font-size: 11px; white-space: pre; z-index: 9999;
+      opacity: 0; pointer-events: none; border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .showcase-item:hover::after { opacity: 1; transform: translate(-50%, -5px); }
+
+    /* Section Animation */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-section { animation: fadeIn 0.4s ease-out forwards; }
+
+    /* Visual Boundary Helper */
+    .visual-boundary {
+      border: 2px dashed #cbd5e1;
+      background: #f8fafc;
+      border-radius: 16px;
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .label {
+      font-size: 11px;
+      color: #94a3b8;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+      display: block;
+    }
+  </style>
 </head>
 
 <body class="flexbox">
 
-<!-- SIDEBAR -->
-<aside
-  class="bg text h w pos p flexbox flex-dir gap"
-  style="
-    --bg:#020617;
-    --text:#e5e7eb;
-    --w:260px;
-    --h:100vh;
-    --pos:fixed;
-    --p:28px;
-    --gap:20px;
-    --flex-dir:column;
-    box-shadow:6px 0 24px rgba(0,0,0,0.25);
-  "
->
-  <h2 class="fs" style="--fs:22px;">Dharm Utility CSS</h2>
+<aside class="bg text h w pos p flexbox flex-dir gap"
+  style="--bg: var(--sidebar-bg); --text:#f1f5f9; --w:280px; --h:100vh; --pos:fixed; --p:32px; --gap:12px; --flex-dir:column; z-index: 1000; box-shadow: 10px 0 30px rgba(0,0,0,0.1);">
+  <div>
+    <h2 class="fs" style="--fs:24px; font-weight: 900; letter-spacing: -1px; color: #38bdf8;">Dharm Utility</h2>
+    <p class="fs" style="--fs:12px; opacity: 0.5;">Stable Engine v1.0.4</p>
+  </div>
 
-  <nav class="flexbox flex-dir gap" style="--flex-dir:column; --gap:6px;">
-    <a class="text cursor p" style="--p:10px; border-radius:10px;" data-section="home">Home</a>
-    <a class="text cursor p" style="--p:10px; border-radius:10px;" data-section="colors">Colors</a>
-    <a class="text cursor p" style="--p:10px; border-radius:10px;" data-section="margin">Margin</a>
-    <a class="text cursor p" style="--p:10px; border-radius:10px;" data-section="padding">Padding</a>
-    <a class="text cursor p" style="--p:10px; border-radius:10px;" data-section="font">Font</a>
-    <a class="text cursor p" style="--p:10px; border-radius:10px;" data-section="layout">Layout</a>
+  <nav class="flexbox flex-dir gap mt" style="--flex-dir:column; --gap:8px; --mt:24px;">
+    <a class="text cursor p fs" style="--p:12px; --fs:14px; border-radius:10px;" data-section="home">🏠 Overview</a>
+    <a class="text cursor p fs" style="--p:12px; --fs:14px; border-radius:10px;" data-section="colors">🎨 Colors</a>
+    <a class="text cursor p fs" style="--p:12px; --fs:14px; border-radius:10px;" data-section="margin">📏 Margin (Outer)</a>
+    <a class="text cursor p fs" style="--p:12px; --fs:14px; border-radius:10px;" data-section="padding">📐 Padding (Inner)</a>
+    <a class="text cursor p fs" style="--p:12px; --fs:14px; border-radius:10px;" data-section="shadow">☁️ Shadows</a>
+    <a class="text cursor p fs" style="--p:12px; --fs:14px; border-radius:10px;" data-section="font">🔤 Typography</a>
+    <a class="text cursor p fs" style="--p:12px; --fs:14px; border-radius:10px;" data-section="layout">🏗️ Flex Engine</a>
   </nav>
 </aside>
 
-<!-- MAIN -->
-<main
-  class="bg text ml p w"
-  style="
-    --bg:#f8fafc;
-    --text:#020617;
-    --ml:260px;
-    --p:64px;
-    --w:calc(100% - 260px);
-  "
->
+<main class="ml p w" style="--ml:280px; --p:60px; --w:calc(100% - 280px); min-height: 100vh;">
 
-<!-- HOME -->
-<section data-content="home">
-  <h1 class="fs" style="--fs:36px;">Welcome</h1>
-  <p class="fs mt" style="--fs:18px; --mt:16px;">
-    Runtime utility CSS using real CSS variables.
-  </p>
-</section>
+  <section data-content="home" class="animate-section" style="background:white; border-radius:28px; padding:60px; border:1px solid #e2e8f0;">
+    <h1 class="fs" style="--fs:52px; font-weight: 900; letter-spacing: -2.5px; line-height: 1;">The Ultimate <br><span style="color:var(--primary)">Utility Engine</span></h1>
+    <p class="fs mt" style="--fs:18px; --mt:20px; color:#64748b; line-height: 1.6; max-width: 600px;">
+      Zero custom CSS files. Entirely driven by your HTML. Hover over any component to see the exact code used to build it.
+    </p>
+  </section>
 
-<!-- COLORS -->
-<section data-content="colors" hidden>
-  <h1 class="fs" style="--fs:28px;">Colors</h1>
+  <section data-content="colors" hidden class="animate-section" style="background:white; border-radius:28px; padding:50px; border:1px solid #e2e8f0;">
+    <h2 class="fs mb" style="--fs:32px; --mb:30px;">Colors</h2>
+    <div class="visual-boundary" style="--p:20px; padding:20px;">
+      <div class="flexbox flex-dir gap" style="--flex-dir:column; --gap:15px;">
+        <div class="showcase-item bg text p" data-code='class="bg text p" style="--bg:#3b82f6; --text:white; --p:20px;"' style="--bg:#3b82f6; --text:white; --p:20px; border-radius:12px;">Primary Blue</div>
+        <div class="showcase-item bg text p" data-code='class="bg text p" style="--bg:#10b981; --text:white; --p:20px;"' style="--bg:#10b981; --text:white; --p:20px; border-radius:12px;">Success Green</div>
+        <div class="showcase-item bg text p" data-code='class="bg text p" style="--bg:#0f172a; --text:#38bdf8; --p:20px;"' style="--bg:#0f172a; --text:#38bdf8; --p:20px; border-radius:12px;">Modern Dark Theme</div>
+      </div>
+    </div>
+  </section>
 
-  <div class="bg text p mt" style="--bg:#e5e7eb; --p:20px; --mt:24px; border-radius:14px;">
-    <b>Helper</b><br>
-    Class: <code>text</code><br>
-    Variable: <code>--text</code>
-  </div>
+  <section data-content="margin" hidden class="animate-section" style="background:white; border-radius:28px; padding:50px;">
+    <h2 class="fs mb" style="--fs:32px; --mb:30px;">Margin (Outer)</h2>
+    
+    <span class="label">Example 1: Left Margin (--ml: 50px)</span>
+    <div class="visual-boundary"><div class="showcase-item bg p ml" data-code='class="ml" style="--ml:50px; --bg:#3b82f6;"' style="--bg:#3b82f6; --p:15px; --ml:50px; color:white; border-radius:8px; width:fit-content; font-weight:700;">--ml: 50px</div></div>
 
-  <pre class="bg text p mt"
-    style="--bg:#020617; --text:#38bdf8; --p:20px; --mt:24px; border-radius:14px;">
-&lt;div class="text" style="--text:red;"&gt;Red text&lt;/div&gt;
-  </pre>
+    <span class="label">Example 2: All Sides Margin (--m: 30px)</span>
+    <div class="visual-boundary"><div class="showcase-item bg p m" data-code='class="m" style="--m:30px; --bg:#10b981;"' style="--bg:#10b981; --p:20px; --m:30px; color:white; border-radius:8px; text-align:center; font-weight:700;">--m: 30px</div></div>
 
-  <p class="fs mt" style="--fs:16px; --mt:24px;">--text: red</p>
-  <div class="text fs" style="--text:red; --fs:18px;">Red text</div>
+    <span class="label">Example 3: Top Margin (--mt: 40px)</span>
+    <div class="visual-boundary"><div class="showcase-item bg p mt" data-code='class="mt" style="--mt:40px; --bg:#f43f5e;"' style="--bg:#f43f5e; --p:15px; --mt:40px; color:white; border-radius:8px; text-align:center; font-weight:700;">--mt: 40px</div></div>
+  </section>
 
-  <p class="fs mt" style="--fs:16px; --mt:24px;">--text: black</p>
-  <div class="text fs" style="--text:black; --fs:18px;">Black text</div>
+  <section data-content="padding" hidden class="animate-section" style="background:white; border-radius:28px; padding:50px;">
+    <h2 class="fs mb" style="--fs:32px; --mb:30px;">Padding (Inner)</h2>
+    
+    <span class="label">Example 1: Uniform Internal (--p: 40px)</span>
+    <div class="visual-boundary">
+      <div class="showcase-item bg p" data-code='class="bg p" style="--p:40px; --bg:#3b82f6;"' style="--bg:#3b82f6; --p:40px; border-radius:12px;">
+        <div style="background:rgba(255,255,255,0.2); border:1px dashed white; padding:10px; color:white; text-align:center; font-weight:700;">Content inside 40px padding</div>
+      </div>
+    </div>
 
-  <p class="fs mt" style="--fs:16px; --mt:24px;">--text: white</p>
-  <div class="bg text fs p" style="--bg:black; --text:white; --p:10px; --fs:18px; border-radius:10px;">
-    White on black
-  </div>
+    <span class="label">Example 2: Left Heavy Indent (--pl: 80px)</span>
+    <div class="visual-boundary">
+      <div class="showcase-item bg pl" data-code='class="bg pl" style="--pl:80px; --bg:#10b981;"' style="--bg:#10b981; --pl:80px; --p:15px; border-radius:12px;">
+        <div style="background:rgba(255,255,255,0.2); border:1px dashed white; padding:10px; color:white; font-weight:700;">80px Left Space</div>
+      </div>
+    </div>
 
-  <p class="fs mt" style="--fs:16px; --mt:24px;">--text: #ff0000</p>
-  <div class="text fs" style="--text:#ff0000; --fs:18px;">Hex red</div>
-</section>
+    <span class="label">Example 3: Small Inner Gap (--p: 10px)</span>
+    <div class="visual-boundary">
+      <div class="showcase-item bg p" data-code='class="bg p" style="--p:10px; --bg:#f43f5e;"' style="--bg:#f43f5e; --p:10px; border-radius:12px; width:fit-content;">
+        <div style="background:rgba(255,255,255,0.2); border:1px dashed white; padding:5px; color:white; font-weight:700;">Tight fit</div>
+      </div>
+    </div>
+  </section>
 
+  <section data-content="layout" hidden class="animate-section" style="background:white; border-radius:28px; padding:50px;">
+    <h2 class="fs mb" style="--fs:32px; --mb:30px;">Flex Engine (Justify)</h2>
+    
+    <span class="label">Alignment: flex-start</span>
+    <div class="visual-boundary">
+      <div class="flexbox justify gap bg p" style="--justify:flex-start; --gap:10px; --bg:transparent; --p:20px;">
+        <div class="bg showcase-item" data-code='--justify: flex-start' style="--bg:var(--primary); width:50px; height:50px; border-radius:8px;"></div>
+        <div class="bg" style="--bg:var(--primary); width:50px; height:50px; border-radius:8px;"></div>
+      </div>
+    </div>
 
-<!-- MARGIN (WITH EXTRA EXAMPLES) -->
-<section data-content="margin" hidden>
-  <h1 class="fs" style="--fs:28px;">Margin</h1>
+    <span class="label">Alignment: center</span>
+    <div class="visual-boundary">
+      <div class="flexbox justify gap bg p" style="--justify:center; --gap:10px; --bg:transparent; --p:20px;">
+        <div class="bg showcase-item" data-code='--justify: center' style="--bg:var(--primary); width:50px; height:50px; border-radius:8px;"></div>
+        <div class="bg" style="--bg:var(--primary); width:50px; height:50px; border-radius:8px;"></div>
+      </div>
+    </div>
 
-  <div class="bg text p mt" style="--bg:#e5e7eb; --p:16px; --mt:24px; border-radius:12px;">
-    <b>Helper</b><br>
-    Class: <code>m</code>, <code>mt</code>, <code>ml</code><br>
-    Variable: <code>--m</code>, <code>--mt</code>, <code>--ml</code>
-  </div>
+    <span class="label">Alignment: flex-end</span>
+    <div class="visual-boundary">
+      <div class="flexbox justify gap bg p" style="--justify:flex-end; --gap:10px; --bg:transparent; --p:20px;">
+        <div class="bg showcase-item" data-code='--justify: flex-end' style="--bg:var(--primary); width:50px; height:50px; border-radius:8px;"></div>
+        <div class="bg" style="--bg:var(--primary); width:50px; height:50px; border-radius:8px;"></div>
+      </div>
+    </div>
+  </section>
 
-  <pre class="bg text p mt"
-    style="--bg:#020617; --text:#38bdf8; --p:16px; --mt:24px; border-radius:12px;">
-&lt;div class="m mt ml"
-     style="--m:20px; --mt:40px; --ml:60px;"&gt;
-  Box
-&lt;/div&gt;
-  </pre>
+  <section data-content="shadow" hidden class="animate-section" style="background:white; border-radius:28px; padding:50px;">
+    <h2 class="fs mb" style="--fs:32px; --mb:30px;">Shadows</h2>
+    <div class="flexbox flex-dir gap" style="--flex-dir:column; --gap:30px;">
+      <div class="showcase-item bg p" data-code='style="box-shadow: 0 4px 6px rgba(0,0,0,0.1);"' style="--bg:white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); --p:30px; border-radius:15px; text-align:center;">Subtle Lift</div>
+      <div class="showcase-item bg p" data-code='style="box-shadow: 0 20px 25px rgba(59,130,246,0.2);"' style="--bg:white; box-shadow: 0 20px 25px rgba(59,130,246,0.2); --p:30px; border-radius:15px; text-align:center;">Primary Glow Shadow</div>
+    </div>
+  </section>
 
-  <!-- NEW VISUAL BLOCK -->
-  <div class="bg p mt" style="--bg:#020617; --p:24px; --mt:24px; border-radius:16px;">
-    <div class="bg text p m" style="--bg:#2563eb; --p:12px; --m:12px;">--m:12px</div>
-    <div class="bg text p m mt" style="--bg:#16a34a; --p:12px; --m:12px; --mt:32px;">--mt:32px</div>
-    <div class="bg text p m ml" style="--bg:#dc2626; --p:12px; --m:12px; --ml:40px;">--ml:40px</div>
-  </div>
-</section>
-
-<!-- PADDING (WITH EXTRA EXAMPLES) -->
-<section data-content="padding" hidden>
-  <h1 class="fs" style="--fs:28px;">Padding</h1>
-
-  <div class="bg text p mt" style="--bg:#e5e7eb; --p:16px; --mt:24px; border-radius:12px;">
-    <b>Helper</b><br>
-    Class: <code>p</code>, <code>pl</code>, <code>pt</code><br>
-    Variable: <code>--p</code>, <code>--pl</code>, <code>--pt</code>
-  </div>
-
-  <pre class="bg text p mt"
-    style="--bg:#020617; --text:#38bdf8; --p:16px; --mt:24px; border-radius:12px;">
-&lt;div class="p pl pt"
-     style="--p:20px; --pl:40px; --pt:10px;"&gt;
-  Box
-&lt;/div&gt;
-  </pre>
-
-  <!-- NEW VISUAL BLOCK -->
-  <div class="bg p mt" style="--bg:#020617; --p:24px; --mt:24px; border-radius:16px;">
-    <div class="bg text p mt" style="--bg:#2563eb; --p:8px;">--p:8px</div>
-    <div class="bg text p mt" style="--bg:#16a34a; --p:24px;">--p:24px</div>
-    <div class="bg text p mt" style="--bg:#dc2626; --p:40px;">--p:40px</div>
-  </div>
-</section>
-<!-- FONT -->
-<section data-content="font" hidden>
-  <h1 class="fs" style="--fs:28px;">Font Size</h1>
-
-  <div class="bg text p mt" style="--bg:#e5e7eb; --p:20px; --mt:24px; border-radius:14px;">
-    <b>Helper</b><br>
-    Class: <code>fs</code><br>
-    Variable: <code>--fs</code>
-  </div>
-
-  <pre class="bg text p mt"
-    style="--bg:#020617; --text:#38bdf8; --p:20px; --mt:24px; border-radius:14px;">
-&lt;p class="fs" style="--fs:32px;"&gt;
-  Text
-&lt;/p&gt;
-  </pre>
-
-  <p class="fs mt" style="--fs:15px; --mt:16px;">--fs: 15px</p>
-  <p class="fs mt" style="--fs:32px; --mt:24px;">--fs: 32px</p>
-  <p class="fs mt" style="--fs:50px; --mt:24px;">--fs: 50px</p>
-</section>
-
-<!-- LAYOUT -->
-<section data-content="layout" hidden>
-  <h1 class="fs" style="--fs:28px;">Layout (Flex)</h1>
-
-  <div class="bg text p mb" style="--bg:#e5e7eb; --p:16px;">
-    <b>Helper</b><br>
-    Classes:
-    <code>flexbox</code>,
-    <code>justify</code>,
-    <code>items</code>,
-    <code>gap</code><br>
-    Variables:
-    <code>--justify</code>,
-    <code>--items</code>,
-    <code>--gap</code>
-  </div>
-
-  <pre class="bg text p"
-    style="--bg:#020617; --text:#38bdf8; --p:16px;">
-&lt;div class="flexbox justify items gap"
-     style="--justify: center; --items: center; --gap: 20px;"&gt;
-  ...
-&lt;/div&gt;
-  </pre>
-
-  <p class="fs mt" style="--fs:16px; --mt:16px;">
-    --justify: center; --items: center;
-  </p>
-
-  <div class="flexbox justify items gap bg text p"
-    style="
-      --justify: center;
-      --items: center;
-      --gap: 20px;
-      --bg: #020617;
-      --text: white;
-      --p: 16px;
-    ">
-    <div class="bg p" style="--bg:#2563eb; --p:10px;">Item 1</div>
-    <div class="bg p" style="--bg:#16a34a; --p:10px;">Item 2</div>
-    <div class="bg p" style="--bg:#dc2626; --p:10px;">Item 3</div>
-  </div>
-
-  <p class="fs mt" style="--fs:16px; --mt:32px;">
-    --justify: space-between; --gap: 10px;
-  </p>
-
-  <div class="flexbox justify items gap bg text p"
-    style="
-      --justify: space-between;
-      --items: center;
-      --gap: 10px;
-      --bg: #020617;
-      --text: white;
-      --p: 16px;
-    ">
-    <div class="bg p" style="--bg:#7c3aed; --p:10px;">Left</div>
-    <div class="bg p" style="--bg:#0d9488; --p:10px;">Center</div>
-    <div class="bg p" style="--bg:#f97316; --p:10px;">Right</div>
-  </div>
-
-  <p class="fs mt" style="--fs:16px; --mt:32px;">
-    --gap: 40px;
-  </p>
-
-  <div class="flexbox justify items gap bg text p"
-    style="
-      --justify: flex-start;
-      --items: center;
-      --gap: 40px;
-      --bg: #020617;
-      --text: white;
-      --p: 16px;
-    ">
-    <div class="bg p" style="--bg:#22c55e; --p:10px;">A</div>
-    <div class="bg p" style="--bg:#eab308; --p:10px;">B</div>
-    <div class="bg p" style="--bg:#ef4444; --p:10px;">C</div>
-  </div>
-</section>
+  <section data-content="font" hidden class="animate-section" style="background:white; border-radius:28px; padding:50px;">
+    <h2 class="fs mb" style="--fs:32px; --mb:30px;">Typography</h2>
+    <div class="visual-boundary p" style="--p:30px;">
+      <div class="showcase-item fs mb" data-code='class="fs" style="--fs:14px;"' style="--fs:14px; --mb:10px;">Body Text (14px)</div>
+      <div class="showcase-item fs mb" data-code='class="fs" style="--fs:32px;"' style="--fs:32px; font-weight:800; --mb:10px;">Header Text (32px)</div>
+      <div class="showcase-item fs" data-code='class="fs" style="--fs:12px; opacity:0.5;"' style="--fs:12px; opacity:0.5;">Muted Small Text</div>
+    </div>
+  </section>
 
 </main>
 
-<!-- FIXED SCRIPT -->
 <script>
   const links = document.querySelectorAll('[data-section]');
   const sections = document.querySelectorAll('[data-content]');
 
   function showSection(name) {
     sections.forEach(sec => {
-      sec.hidden = sec.dataset.content !== name;
+      if (sec.dataset.content === name) {
+        sec.hidden = false;
+        sec.classList.remove('animate-section');
+        void sec.offsetWidth; 
+        sec.classList.add('animate-section');
+      } else {
+        sec.hidden = true;
+      }
     });
 
     links.forEach(link => {
       link.style.background = 'none';
+      link.style.color = '#94a3b8';
       if (link.dataset.section === name) {
-        link.style.background = '#2563eb';
+        link.style.background = '#3b82f6';
+        link.style.color = 'white';
       }
     });
   }
 
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      showSection(link.dataset.section);
-    });
-  });
-
-  // Default section
+  links.forEach(link => { link.onclick = () => showSection(link.dataset.section); });
   showSection('home');
 </script>
 
-<script
-  src="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.4/dist/engine.js"
-  defer
-></script>
+<script src="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.4/dist/engine.js" defer></script>
 
 </body>
 </html>
