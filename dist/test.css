@@ -1,68 +1,89 @@
+/* ======================================================
+   CORE RESET
+====================================================== */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* color */
-.bg { background-color: var(--bg, transparent); }
-.text { color: var(--text, inherit); }
+html, body {
+  margin: 0;
+  padding: 0;
+}
 
-/* spacing */
-.m { margin: var(--m, 0); }
-.ml { margin-left: var(--ml, 0); }
-.mr { margin-right: var(--mr, 0); }
-.mt { margin-top: var(--mt, 0); }
-.mb { margin-bottom: var(--mb, 0); }
 
-.p { padding: var(--p, 0); }
-.pl { padding-left: var(--pl, 0); }
-.pr { padding-right: var(--pr, 0); }
-.pt { padding-top: var(--pt, 0); }
-.pb { padding-bottom: var(--pb, 0); }
+/* ======================================================
+   TYPOGRAPHY BASE
+====================================================== */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial;
+  line-height: 1.5; 
+  -webkit-font-smoothing: antialiased;
+}
 
-.gap { gap: var(--gap, 0); }
 
-/* typography */
-.fs { font-size: var(--fs, inherit); }
-.lh { line-height: var(--lh, normal); }
-.fw { font-weight: var(--fw, normal); }
-.ta { text-align: var(--ta, left); }
+/* ======================================================
+   LAYOUT PRIMITIVES
+   (semantic, not numeric utilities)
+====================================================== */
+.flex { display: flex; }
+.inline { display: inline-block; }
+.grid { display: grid; }
+.hidden { display: none; }
 
-/* sizing */
-.w { width: var(--w, auto); }
-.h { height: var(--h, auto); }
-.max-w { max-width: var(--max-w, none); }
-.min-w { min-width: var(--min-w, auto); }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
 
-/* layout */
-.d { display: var(--d, block); }
-.pos { position: var(--pos, static); }
-.top { top: var(--top, auto); }
-.right { right: var(--right, auto); }
-.bottom { bottom: var(--bottom, auto); }
-.left { left: var(--left, auto); }
-.z { z-index: var(--z, auto); }
 
-/* flex helpers */
-.flexbox { display: flex; }
-.flex-dir { flex-direction: var(--flex-dir, row); }
-.justify { justify-content: var(--justify, flex-start); }
-.items { align-items: var(--items, stretch); }
-.wrap { flex-wrap: var(--wrap, nowrap); }
+/* ======================================================
+   COMMON UX HELPERS
+====================================================== */
+.pointer { cursor: pointer; }
 
-/* grid helpers */
-.gridbox { display: grid; }
-.grid-cols { grid-template-columns: var(--cols); }
-.grid-rows { grid-template-rows: var(--rows); }
+.smooth {
+  transition: all 0.2s ease;
+}
 
-/* visuals */
-.radius { border-radius: var(--radius, 0); }
-.border { border: var(--border, none); }
-.shadow { box-shadow: var(--shadow, none); }
-.transition { transition: var(--transition, none); }
-.transform { transform: var(--transform, none); }
+.round {
+  border-radius: 6px;
+}
 
-/* misc */
-.cursor { cursor: var(--cursor, auto); }
-.overflow { overflow: var(--overflow, visible); }
+.round-lg {
+  border-radius: 12px;
+}
+
+.shadow {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+
+/* ======================================================
+   ACCESSIBILITY & QUALITY
+====================================================== */
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+/* ======================================================
+   DEBUG / DEV UTILITIES (OPTIONAL)
+====================================================== */
+.debug {
+  outline: 1px dashed red;
+}

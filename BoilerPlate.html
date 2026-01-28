@@ -1,59 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Utility Navbar</title>
+  <title>DharmUI – Utility Navbar Demo</title>
 
+  <!-- Minimal CSS (reset + semantic helpers only) -->
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.4/dist/test.css"
   />
 </head>
-  
-<body class="bg" style="--bg: #ffffff;">
 
-  <!-- NAVBAR -->
- <nav
-  class="bg text mt p flexbox justify items radius shadow w pl pr ml mr gap fs"
-  style="
-    --bg: black;
-    --text: white;
+<body class="bg-[#ffffff]">
 
-    --w: calc(60%);
+  <!-- ======================
+       NAVBAR
+  ======================= -->
+  <nav
+    class="
+      flex
+      justify-between
+      items-center
+      gap-8
 
-    --p: 20px;
-    --ml: 20%;
-    --mr: 15px;
-    --mt: 50px;
-    --gap:8px;
-    --fs:100px;
+      w[60%]
+      mt-50
+      ml[20%]
+      mr-15
+      p-20
+      pl-40
+      pr-40
 
-    --pl: 40px;
-    --pr: 40px;
+      bg-black
+      text-white
 
-    --radius: 14px;
-    --shadow: 0 10px 30px rgba(0,0,0,0.25);
-    --justify: space-between;
-    --items: center;
-  "
->
-
+      round-lg
+      shadow-lg
+    "
+  >
     <!-- Brand -->
-    <div class="fs cursor" style="--fs: 30px; --cursor: pointer;">
+    <div class="fs-30 cursor-pointer">
       DharmUI
     </div>
 
     <!-- Right-side Links -->
-    <div class="flexbox items gap">
-      <a class="text fs cursor" style="--fs: 20px; --cursor: pointer;">Home</a>
-      <a class="text fs cursor" style="--fs: 20px; --cursor: pointer;">About</a>
-      <a class="text fs cursor" style="--fs: 20px; --cursor: pointer;">Contact</a>
+    <div class="flex gap-20">
+      <a class="fs-20 cursor-pointer">Home</a>
+      <a class="fs-20 cursor-pointer">About</a>
+      <a class="fs-20 cursor-pointer">Contact</a>
     </div>
-
   </nav>
 
-
-  <!-- Runtime Engine -->
+  <!-- ======================
+       RUNTIME ENGINE
+  ======================= -->
   <script
     src="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.4/dist/engine.js"
     defer
