@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>DharmUI – Utility Navbar Demo</title>
+  <title>DharmUI – Interactive Engine Demo</title>
 
-  <!-- Minimal CSS (reset + semantic helpers only) -->
   <link
     rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.4/dist/test.css"
+    href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.5/dist/test.css"
   />
 </head>
 
-<body class="bg-[#ffffff]">
+<body class="bg-[#f4f4f4]">
 
   <!-- ======================
        NAVBAR
@@ -24,38 +23,120 @@
       gap-8
 
       w[60%]
-      mt-50
+      mt-40
       ml[20%]
-      mr-15
       p-20
       pl-40
       pr-40
 
       bg-black
-      text-white
+      text-yellow
 
       round-lg
       shadow-lg
     "
   >
-    <!-- Brand -->
-    <div class="fs-30 cursor-pointer">
-      DharmUI
-    </div>
+    <div class="fs-30 cursor-pointer">DharmUI</div>
 
-    <!-- Right-side Links -->
     <div class="flex gap-20">
-      <a class="fs-20 cursor-pointer">Home</a>
-      <a class="fs-20 cursor-pointer">About</a>
-      <a class="fs-20 cursor-pointer">Contact</a>
+      <a class="fs-18 cursor-pointer">Home</a>
+      <a class="fs-18 cursor-pointer">Docs</a>
+      <a class="fs-18 cursor-pointer">GitHub</a>
     </div>
   </nav>
+
+  <!-- ======================
+       VISUAL PROOF HEADER
+  ======================= -->
+  <div class="mt-60 text-center">
+    <div class="fs-28 fw-bold">Utility Engine Live Proof</div>
+    <div class="fs-14 text-[#555] mt-10">
+      If this layout looks correct, the engine is working.
+    </div>
+  </div>
+
+  <!-- ======================
+       MAIN DEMO GRID
+  ======================= -->
+  <section
+    class="
+      grid
+      grid-cols-3
+      gap-24
+      mt-40
+      w[80%]
+      ml[10%]
+    "
+  >
+    <!-- CARD 1 : SPACING -->
+    <div class="p-20 bg-white round shadow">
+      <div class="fs-18 fw-bold mb-12">Spacing Utilities</div>
+
+      <div class="bg-[#f8f8f8] p-10 round-sm">
+        <div class="mt-10 bg-[#ddd] p-6">mt-10</div>
+        <div class="ml-20 bg-[#ccc] p-6 mt-10">ml-20</div>
+        <div class="pt[12px] bg-[#bbb] mt-10">pt[12px]</div>
+      </div>
+    </div>
+
+    <!-- CARD 2 : FLEX vs GRID -->
+    <div class="p-20 bg-[#e8f0ff] round-lg shadow-lg">
+      <div class="fs-18 fw-bold mb-12">Flex vs Grid</div>
+
+      <div class="fs-14 mb-8">Flex layout</div>
+      <div class="flex gap-10 mb-16">
+        <div class="p-10 bg-white round">A</div>
+        <div class="p-10 bg-white round">B</div>
+        <div class="p-10 bg-white round">C</div>
+      </div>
+
+      <div class="fs-14 mb-8">Grid layout</div>
+      <div class="grid grid-cols-3 gap-10">
+        <div class="p-10 bg-white round">1</div>
+        <div class="p-10 bg-white round">2</div>
+        <div class="p-10 bg-white round">3</div>
+      </div>
+    </div>
+
+    <!-- CARD 3 : POWER FEATURES -->
+    <div
+      class="
+        p-20
+        bg-black
+        text-white
+        round[20px]
+        shadow[0_20px_40px_rgba(0,0,0,0.35)]
+        cursor-pointer
+      "
+    >
+      <div class="fs-18 fw-bold mb-12">Advanced Power</div>
+
+      <div class="fs-14 mb-10">Bracket syntax</div>
+
+      <div class="flex gap-10 wrap">
+        <span class="p-6 bg-[#222] round-sm">round-sm</span>
+        <span class="p-6 bg-[#222] round">round</span>
+        <span class="p-6 bg-[#222] round[16px]">round[16px]</span>
+      </div>
+
+      <div class="mt-16 fs-14 text-[#aaa]">
+        Hoverable • Shadowed • Custom radius
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================
+       FOOTER SIGNAL
+  ======================= -->
+  <div class="mt-60 text-center fs-14 text-[#666]">
+    DharmUI Engine · Runtime Utility System · No Build Step
+  </div>
 
   <!-- ======================
        RUNTIME ENGINE
   ======================= -->
   <script
-    src="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.4/dist/engine.js"
+    src="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.5/dist/engine.js"
     defer
   ></script>
 

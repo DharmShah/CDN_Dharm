@@ -1,215 +1,91 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dharm Utility CSS | Pro Interactive Docs</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dharm Engine – Utility Demo</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.4/dist/test.css" />
+    <!-- CDN CSS (optional visual base) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.5/dist/test.css"
+    />
+  </head>
+  <body class="bg[#0f172a] text[#e5e7eb] m-0">
+    <!-- NAVBAR -->
+    <nav class="flex justify-between items-center p-20 shadow bg[#020617]">
+      <h1 class="text[#38bdf8]">DharmEngine</h1>
 
-  <style>
-    :root {
-      --primary: #3b82f6;
-      --sidebar-bg: #020617;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    * { transition: var(--transition); scroll-behavior: smooth; box-sizing: border-box; }
-    body { background-color: #f1f5f9; overflow-x: hidden; font-family: 'Inter', sans-serif; margin: 0; }
-
-    /* CODE LENS TOOLTIP: Fixed for maximum visibility */
-    .showcase-item { position: relative; cursor: help; z-index: 10; }
-    .showcase-item::after {
-      content: attr(data-code);
-      position: absolute; bottom: 105%; left: 50%; transform: translate(-50%, -10px);
-      background: #0f172a; color: #38bdf8; padding: 10px 14px; border-radius: 8px;
-      font-family: monospace; font-size: 11px; white-space: pre; z-index: 9999;
-      opacity: 0; pointer-events: none; border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-    .showcase-item:hover::after { opacity: 1; transform: translate(-50%, -5px); }
-
-    /* Section Animation */
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-section { animation: fadeIn 0.4s ease-out forwards; }
-
-    /* Visual Boundary Helper */
-    .visual-boundary {
-      border: 2px dashed #cbd5e1;
-      background: #f8fafc;
-      border-radius: 16px;
-      position: relative;
-      margin-bottom: 30px;
-    }
-
-    .label {
-      font-size: 11px;
-      color: #94a3b8;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 12px;
-      display: block;
-    }
-  </style>
-</head>
-
-<body class="flexbox">
-
-<aside class="bg text h w pos p flexbox flex-dir gap"
-  style="--bg: var(--sidebar-bg); --text:#f1f5f9; --w:280px; --h:100vh; --pos:fixed; --p:32px; --gap:12px; --flex-dir:column; z-index: 1000; box-shadow: 10px 0 30px rgba(0,0,0,0.1);">
-  <div>
-    <h2 class="fs" style="--fs:24px; font-weight: 900; letter-spacing: -1px; color: #38bdf8;">Dharm Utility</h2>
-    <p class="fs" style="--fs:12px; opacity: 0.5;">Stable Engine v1.0.4</p>
-  </div>
-
-  <nav class="flexbox flex-dir gap mt" style="--flex-dir:column; --gap:8px; --mt:24px;">
-    <a class="text cursor p fs" style="--p:12px; --fs:14px; border-radius:10px;" data-section="home">🏠 Overview</a>
-    <a class="text cursor p fs" style="--p:12px; --fs:14px; border-radius:10px;" data-section="colors">🎨 Colors</a>
-    <a class="text cursor p fs" style="--p:12px; --fs:14px; border-radius:10px;" data-section="margin">📏 Margin (Outer)</a>
-    <a class="text cursor p fs" style="--p:12px; --fs:14px; border-radius:10px;" data-section="padding">📐 Padding (Inner)</a>
-    <a class="text cursor p fs" style="--p:12px; --fs:14px; border-radius:10px;" data-section="shadow">☁️ Shadows</a>
-    <a class="text cursor p fs" style="--p:12px; --fs:14px; border-radius:10px;" data-section="font">🔤 Typography</a>
-    <a class="text cursor p fs" style="--p:12px; --fs:14px; border-radius:10px;" data-section="layout">🏗️ Flex Engine</a>
-  </nav>
-</aside>
-
-<main class="ml p w" style="--ml:280px; --p:60px; --w:calc(100% - 280px); min-height: 100vh;">
-
-  <section data-content="home" class="animate-section" style="background:white; border-radius:28px; padding:60px; border:1px solid #e2e8f0;">
-    <h1 class="fs" style="--fs:52px; font-weight: 900; letter-spacing: -2.5px; line-height: 1;">The Ultimate <br><span style="color:var(--primary)">Utility Engine</span></h1>
-    <p class="fs mt" style="--fs:18px; --mt:20px; color:#64748b; line-height: 1.6; max-width: 600px;">
-      Zero custom CSS files. Entirely driven by your HTML. Hover over any component to see the exact code used to build it.
-    </p>
-  </section>
-
-  <section data-content="colors" hidden class="animate-section" style="background:white; border-radius:28px; padding:50px; border:1px solid #e2e8f0;">
-    <h2 class="fs mb" style="--fs:32px; --mb:30px;">Colors</h2>
-    <div class="visual-boundary" style="--p:20px; padding:20px;">
-      <div class="flexbox flex-dir gap" style="--flex-dir:column; --gap:15px;">
-        <div class="showcase-item bg text p" data-code='class="bg text p" style="--bg:#3b82f6; --text:white; --p:20px;"' style="--bg:#3b82f6; --text:white; --p:20px; border-radius:12px;">Primary Blue</div>
-        <div class="showcase-item bg text p" data-code='class="bg text p" style="--bg:#10b981; --text:white; --p:20px;"' style="--bg:#10b981; --text:white; --p:20px; border-radius:12px;">Success Green</div>
-        <div class="showcase-item bg text p" data-code='class="bg text p" style="--bg:#0f172a; --text:#38bdf8; --p:20px;"' style="--bg:#0f172a; --text:#38bdf8; --p:20px; border-radius:12px;">Modern Dark Theme</div>
+      <div class="flex gap-20">
+        <a class="cursor-pointer text[#cbd5f5]">Features</a>
+        <a class="cursor-pointer text[#cbd5f5]">Showcase</a>
+        <a class="cursor-pointer text[#cbd5f5]">Get Started</a>
+        <a class="cursor-pointer text[#cbd5f5]" href="docs.html">Doc</a>
       </div>
-    </div>
-  </section>
+    </nav>
 
-  <section data-content="margin" hidden class="animate-section" style="background:white; border-radius:28px; padding:50px;">
-    <h2 class="fs mb" style="--fs:32px; --mb:30px;">Margin (Outer)</h2>
-    
-    <span class="label">Example 1: Left Margin (--ml: 50px)</span>
-    <div class="visual-boundary"><div class="showcase-item bg p ml" data-code='class="ml" style="--ml:50px; --bg:#3b82f6;"' style="--bg:#3b82f6; --p:15px; --ml:50px; color:white; border-radius:8px; width:fit-content; font-weight:700;">--ml: 50px</div></div>
+    <!-- HERO -->
+    <section class="flex flex-col items-center justify-center p-40 gap-20">
+      <h2 class="text[#ffffff]">Build Faster. Ship Smarter.</h2>
 
-    <span class="label">Example 2: All Sides Margin (--m: 30px)</span>
-    <div class="visual-boundary"><div class="showcase-item bg p m" data-code='class="m" style="--m:30px; --bg:#10b981;"' style="--bg:#10b981; --p:20px; --m:30px; color:white; border-radius:8px; text-align:center; font-weight:700;">--m: 30px</div></div>
+      <p class="text[#94a3b8]">
+        A JS-powered utility engine running entirely from CDN.
+      </p>
 
-    <span class="label">Example 3: Top Margin (--mt: 40px)</span>
-    <div class="visual-boundary"><div class="showcase-item bg p mt" data-code='class="mt" style="--mt:40px; --bg:#f43f5e;"' style="--bg:#f43f5e; --p:15px; --mt:40px; color:white; border-radius:8px; text-align:center; font-weight:700;">--mt: 40px</div></div>
-  </section>
+      <button
+        class="p-12 bg[#38bdf8] text[#020617] round shadow cursor-pointer"
+      >
+        Explore Engine
+      </button>
+    </section>
 
-  <section data-content="padding" hidden class="animate-section" style="background:white; border-radius:28px; padding:50px;">
-    <h2 class="fs mb" style="--fs:32px; --mb:30px;">Padding (Inner)</h2>
-    
-    <span class="label">Example 1: Uniform Internal (--p: 40px)</span>
-    <div class="visual-boundary">
-      <div class="showcase-item bg p" data-code='class="bg p" style="--p:40px; --bg:#3b82f6;"' style="--bg:#3b82f6; --p:40px; border-radius:12px;">
-        <div style="background:rgba(255,255,255,0.2); border:1px dashed white; padding:10px; color:white; text-align:center; font-weight:700;">Content inside 40px padding</div>
+    <!-- FEATURES -->
+    <section class="p-40">
+      <h3 class="mb-20 text[#38bdf8]">Why Dharm Engine?</h3>
+
+      <div class="grid grid-cols-3 gap-20">
+        <div class="p-20 bg[#020617] round shadow">
+          <h4>⚡ CDN Powered</h4>
+          <p class="text[#94a3b8]">No install. No build. Just load and go.</p>
+        </div>
+
+        <div class="p-20 bg[#020617] round shadow">
+          <h4>🎨 Utility First</h4>
+          <p class="text[#94a3b8]">Classes translate directly into styles.</p>
+        </div>
+
+        <div class="p-20 bg[#020617] round shadow">
+          <h4>🧠 Runtime Engine</h4>
+          <p class="text[#94a3b8]">
+            Styles resolved dynamically via JavaScript.
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <span class="label">Example 2: Left Heavy Indent (--pl: 80px)</span>
-    <div class="visual-boundary">
-      <div class="showcase-item bg pl" data-code='class="bg pl" style="--pl:80px; --bg:#10b981;"' style="--bg:#10b981; --pl:80px; --p:15px; border-radius:12px;">
-        <div style="background:rgba(255,255,255,0.2); border:1px dashed white; padding:10px; color:white; font-weight:700;">80px Left Space</div>
+    <!-- SHOWCASE -->
+    <section class="p-40 flex flex-col items-center gap-20 bg[#020617]">
+      <h3 class="text[#38bdf8]">Live Showcase</h3>
+
+      <div class="p-30 round shadow bg[#0f172a]">
+        <p class="text[#cbd5f5]">
+          This entire layout is powered by your engine.js class rules.
+        </p>
       </div>
-    </div>
 
-    <span class="label">Example 3: Small Inner Gap (--p: 10px)</span>
-    <div class="visual-boundary">
-      <div class="showcase-item bg p" data-code='class="bg p" style="--p:10px; --bg:#f43f5e;"' style="--bg:#f43f5e; --p:10px; border-radius:12px; width:fit-content;">
-        <div style="background:rgba(255,255,255,0.2); border:1px dashed white; padding:5px; color:white; font-weight:700;">Tight fit</div>
-      </div>
-    </div>
-  </section>
+      <button
+        class="p-12 bg[#22c55e] text[#022c22] round shadow cursor-pointer"
+      >
+        Run Demo Action
+      </button>
+    </section>
 
-  <section data-content="layout" hidden class="animate-section" style="background:white; border-radius:28px; padding:50px;">
-    <h2 class="fs mb" style="--fs:32px; --mb:30px;">Flex Engine (Justify)</h2>
-    
-    <span class="label">Alignment: flex-start</span>
-    <div class="visual-boundary">
-      <div class="flexbox justify gap bg p" style="--justify:flex-start; --gap:10px; --bg:transparent; --p:20px;">
-        <div class="bg showcase-item" data-code='--justify: flex-start' style="--bg:var(--primary); width:50px; height:50px; border-radius:8px;"></div>
-        <div class="bg" style="--bg:var(--primary); width:50px; height:50px; border-radius:8px;"></div>
-      </div>
-    </div>
+    <!-- FOOTER -->
+    <footer class="p-20 flex justify-center bg[#020617]">
+      <p class="text[#64748b]">© 2026 Dharm Engine — JS Utility Runtime</p>
+    </footer>
 
-    <span class="label">Alignment: center</span>
-    <div class="visual-boundary">
-      <div class="flexbox justify gap bg p" style="--justify:center; --gap:10px; --bg:transparent; --p:20px;">
-        <div class="bg showcase-item" data-code='--justify: center' style="--bg:var(--primary); width:50px; height:50px; border-radius:8px;"></div>
-        <div class="bg" style="--bg:var(--primary); width:50px; height:50px; border-radius:8px;"></div>
-      </div>
-    </div>
-
-    <span class="label">Alignment: flex-end</span>
-    <div class="visual-boundary">
-      <div class="flexbox justify gap bg p" style="--justify:flex-end; --gap:10px; --bg:transparent; --p:20px;">
-        <div class="bg showcase-item" data-code='--justify: flex-end' style="--bg:var(--primary); width:50px; height:50px; border-radius:8px;"></div>
-        <div class="bg" style="--bg:var(--primary); width:50px; height:50px; border-radius:8px;"></div>
-      </div>
-    </div>
-  </section>
-
-  <section data-content="shadow" hidden class="animate-section" style="background:white; border-radius:28px; padding:50px;">
-    <h2 class="fs mb" style="--fs:32px; --mb:30px;">Shadows</h2>
-    <div class="flexbox flex-dir gap" style="--flex-dir:column; --gap:30px;">
-      <div class="showcase-item bg p" data-code='style="box-shadow: 0 4px 6px rgba(0,0,0,0.1);"' style="--bg:white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); --p:30px; border-radius:15px; text-align:center;">Subtle Lift</div>
-      <div class="showcase-item bg p" data-code='style="box-shadow: 0 20px 25px rgba(59,130,246,0.2);"' style="--bg:white; box-shadow: 0 20px 25px rgba(59,130,246,0.2); --p:30px; border-radius:15px; text-align:center;">Primary Glow Shadow</div>
-    </div>
-  </section>
-
-  <section data-content="font" hidden class="animate-section" style="background:white; border-radius:28px; padding:50px;">
-    <h2 class="fs mb" style="--fs:32px; --mb:30px;">Typography</h2>
-    <div class="visual-boundary p" style="--p:30px;">
-      <div class="showcase-item fs mb" data-code='class="fs" style="--fs:14px;"' style="--fs:14px; --mb:10px;">Body Text (14px)</div>
-      <div class="showcase-item fs mb" data-code='class="fs" style="--fs:32px;"' style="--fs:32px; font-weight:800; --mb:10px;">Header Text (32px)</div>
-      <div class="showcase-item fs" data-code='class="fs" style="--fs:12px; opacity:0.5;"' style="--fs:12px; opacity:0.5;">Muted Small Text</div>
-    </div>
-  </section>
-
-</main>
-
-<script>
-  const links = document.querySelectorAll('[data-section]');
-  const sections = document.querySelectorAll('[data-content]');
-
-  function showSection(name) {
-    sections.forEach(sec => {
-      if (sec.dataset.content === name) {
-        sec.hidden = false;
-        sec.classList.remove('animate-section');
-        void sec.offsetWidth; 
-        sec.classList.add('animate-section');
-      } else {
-        sec.hidden = true;
-      }
-    });
-
-    links.forEach(link => {
-      link.style.background = 'none';
-      link.style.color = '#94a3b8';
-      if (link.dataset.section === name) {
-        link.style.background = '#3b82f6';
-        link.style.color = 'white';
-      }
-    });
-  }
-
-  links.forEach(link => { link.onclick = () => showSection(link.dataset.section); });
-  showSection('home');
-</script>
-
-<script src="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.4/dist/engine.js" defer></script>
-
-</body>
+    <!-- CDN JS -->
+    <script src="https://cdn.jsdelivr.net/gh/DharmShah/CDN_Dharm@v1.0.5/dist/engine.js"></script>
+  </body>
 </html>
